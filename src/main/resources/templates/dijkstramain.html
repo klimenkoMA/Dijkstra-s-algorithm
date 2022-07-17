@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8" content="">
+    <title>DIJKSTRA</title>
+</head>
+<body>
+<table align="center" width="1500">
+    <tr>
+        <form action="/main">
+            <button type="submit">Матрица смежности</button>
+        </form>
+    </tr>
+
+</table>
+<form method="post" action="/addvertex">
+    <input type="text" name="id" placeholder="Вершина">
+    <input type="text" name="vertexA" placeholder="А">
+    <input type="text" name="vertexB" placeholder="B">
+    <input type="text" name="vertexC" placeholder="C">
+    <input type="text" name="vertexD" placeholder="D">
+    <input type="text" name="vertexE" placeholder="E">
+    <input type="text" name="vertexF" placeholder="F">
+    <button type="submit">Добавить</button>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+</form>
+<table align="center" bgcolor="#a9a9a9" width="800" style="columns: max-content">
+    <tr>
+        <th>id</th>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+        <th>D</th>
+        <th>E</th>
+        <th>F</th>
+    </tr>
+    <div th:each="element : ${dijkstraAlgoritmList}" class="row m-1">
+        <div class="col-8">
+            <tr align="center">
+                <td>
+                    <div>[[${element.id}]]</div>
+                </td>
+                <td>
+                    <div>[[${element.vertexA}]]</div>
+                </td>
+                <td>
+                    <div>[[${element.vertexB}]]</div>
+                </td>
+                <td>
+                    <div>[[${element.vertexC}]]</div>
+                </td>
+                <td>
+                    <div>[[${element.vertexD}]]</div>
+                </td>
+                <td>
+                    <div>[[${element.vertexE}]]</div>
+                </td>
+                <td>
+                    <div>[[${element.vertexF}]]</div>
+                </td>
+            </tr>
+        </div>
+    </div>
+</table>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+</body>
+</html>
